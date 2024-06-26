@@ -561,7 +561,7 @@ public class PythonGenerator extends CGenerator {
 
   private static String setUpMainTarget(
           boolean hasMain, String executableName, Stream<String> cSources) {
-    String pyVersion = pythonVersion.isEmpty() ? "3.8" : pythonVersion + " EXACT";
+    String pyVersion = pythonVersion.isEmpty() ? "3.10.0...<3.11.0" : pythonVersion + " EXACT";
     return ("""
         set(CMAKE_POSITION_INDEPENDENT_CODE ON)
         add_compile_definitions(_PYTHON_TARGET_ENABLED)
